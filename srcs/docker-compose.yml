@@ -32,35 +32,35 @@ services:
       tty: true
       restart: on-failure
 #-------------------------------------------------------------------------------#
-#  wordpress:
-      #depends_on:
-         #- mariadb
-    #  build: ./wordpress
-    #  container_name: inception_wordpress
-    #  image: wordpress
-    #  volumes:
-    #      - wordpress-volume:/var/www/html
-    #  environment:
-    #      - WP_URL=https://${DOMAIN_NAME}
-    #      - WP_DATABASE=${WP_DATABASE}
-    #      - WP_TITLE=${WP_TITLE}
-    #      - WP_ADMIN_USER=${WP_ADMIN_USER}
-    #      - WP_ADMIN_PWD=${WP_ADMIN_PWD}
-    #      - WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
-    #      - WP_USER=${WP_USER}
-    #      - WP_USER_PWD=${WP_USER_PWD}
-    #      - WP_USER_EMAIL=${WP_USER_EMAIL}
-    #      - MARIADB_USER=${MARIADB_USER}
-    #      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
-    #      - MARIADB_DATABASE=${MARIADB_DATABASE}
-    #      - MARIADB_PORT=${MARIADB_PORT}
-    #      - MARIADB_NEW_PWD=${MARIADB_NEW_PWD}
-    #  expose: 
-    #      - "9000"
-    #  networks:
-    #      - intra
-    #  tty: true
-    #  restart: on-failure
+  wordpress:
+      depends_on:
+         - mariadb
+      build: ./wordpress
+      container_name: inception_wordpress
+      image: wordpress
+      volumes:
+          - wordpress-volume:/var/www/html
+      environment:
+          - WP_URL=https://${DOMAIN_NAME}
+          - WP_DATABASE=${WP_DATABASE}
+          - WP_TITLE=${WP_TITLE}
+          - WP_ADMIN_USER=${WP_ADMIN_USER}
+          - WP_ADMIN_PWD=${WP_ADMIN_PWD}
+          - WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
+          - WP_USER=${WP_USER}
+          - WP_USER_PWD=${WP_USER_PWD}
+          - WP_USER_EMAIL=${WP_USER_EMAIL}
+          - MARIADB_USER=${MARIADB_USER}
+          - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+          - MARIADB_DATABASE=${MARIADB_DATABASE}
+          - MARIADB_PORT=${MARIADB_PORT}
+          - MARIADB_NEW_PWD=${MARIADB_NEW_PWD}
+      expose: 
+          - "9000"
+      networks:
+          - intra
+      tty: true
+      restart: on-failure
 
 volumes:
   mariadb-volume:

@@ -18,6 +18,6 @@ RUN		curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cl
 
 EXPOSE 9000
 
-ENTRYPOINT ["sh", "wordpress.sh"]
+ENTRYPOINT ["./wordpress.sh"]
 
-#CMD ["php-fpm"]
+CMD ["php-fpm7.3"]
