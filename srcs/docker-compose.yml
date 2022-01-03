@@ -21,6 +21,8 @@ services:
       restart: on-failure
 #-------------------------------------------------------------------------------#
   nginx:
+      depends_on:
+          - wordpress
       build: ./nginx
       container_name: inception_nginx
       volumes:

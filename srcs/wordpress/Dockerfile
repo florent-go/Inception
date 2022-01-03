@@ -20,4 +20,4 @@ EXPOSE 9000
 
 ENTRYPOINT ["./wordpress.sh"]
 
-CMD ["php-fpm7.3"]
+CMD ["php-fpm7.3", "-F", "-R"]
