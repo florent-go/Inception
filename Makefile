@@ -25,5 +25,6 @@ re: fclean all
 
 prune: fclean
 	docker system prune --volumes --all --force
+	sudo rm -rf ~/data
 
 .PHONY: build clean fclean all re .up
